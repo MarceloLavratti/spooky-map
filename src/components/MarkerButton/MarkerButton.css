@@ -1,0 +1,17 @@
+.btn-component {
+  position: fixed;
+  display: flex;
+  z-index: 999;
+  bottom: 10%;
+  right: 5%;
+}
+
+.btn-marker {
+  color: #fff;
+  background-color: #7f00e7;
+  font-size: 2em;
+}
+
+.btn-marker:hover {
+  cursor: pointer;
+}
