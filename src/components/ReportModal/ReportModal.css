@@ -4,15 +4,77 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #5b49fd;
-    font-size: 1em;
-    background-color: #fff;
+    color: #643173;
+    background-color: #86a59c;
+    border: solid 2px #333333;
     border-radius: 10px;
-    width: 400px;
-    height: 400px;
+    font-size: 1em;
+    width: 600px;
+    height: 700px;
+    font-family: "IBM Plex Sans", sans-serif;
 }
 
+#p-modal {
+    font-size: 1.5em;
+}
+
+#upload,
 #send:hover,
 #close:hover {
     cursor: pointer;
+}
+
+#reportModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.event-selection {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.event-type-selection {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.img-choice {
+    max-width: 65%;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 100%;
+}
+
+.event-info-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title,
+#text {
+    border-radius: 5px;
+    width: 300px;
+}
+
+#date {
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-right: 142px;
+
+}
+
+#range {
+    width: 200px;
 }

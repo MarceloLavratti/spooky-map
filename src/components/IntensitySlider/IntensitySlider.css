@@ -1,0 +1,36 @@
+.slider-root {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: 100%;
+}
+
+.slider-track {
+    background-color: #F6F1EE;
+    position: relative;
+    flex-grow: 1;
+    height: 4px;
+    border-radius: 999px;
+}
+
+.slider-range {
+    position: absolute;
+    background-color: #89ce94;
+    height: 100%;
+    border-radius: 999px;
+}
+
+.slider-thumb {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: #7d5ba6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-thumb:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(225, 0, 255, 0.3);
+}
