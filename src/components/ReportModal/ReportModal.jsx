@@ -1,9 +1,9 @@
 import "./ReportModal.css"
 import IntensitySlider from "../IntensitySlider/IntensitySlider"
-import ghost from "../../assets/images/ghost_m_white.png"
-import poltergeist from "../../assets/images/poltergeist_m_white.png"
-import monster from "../../assets/images/monster_m_white.png"
-import ufo from "../../assets/images/ufo_m_white.png"
+import ghost from "../../assets/images/ghost_m_white.svg"
+import poltergeist from "../../assets/images/poltergeist_m_white.svg"
+import monster from "../../assets/images/monster_m_white.svg"
+import ufo from "../../assets/images/ufo_m_white.svg"
 import { useState } from "react"
 
 const ReportModal = ({ onClose }) => {
@@ -17,24 +17,32 @@ const ReportModal = ({ onClose }) => {
 
             <form action="" className="event-selection">
                 <div className="event-type-selection">
-                    <img src={ghost} alt="" className="img-choice" />
-                    <label for="ghost">Aparição</label>
-                    <input type="radio" id="ghost" name="reportEvent" value="GHOST" />
+                    <input type="radio" id="ghost" name="reportEvent" />
+                    <label htmlFor="ghost">
+                        <img src={ghost} className="img-choice ghost-animation" />
+                        <span>Aparição</span>
+                    </label>
                 </div>
                 <div className="event-type-selection">
-                    <img src={poltergeist} alt="" className="img-choice" />
-                    <label for="poltergeist">Poltergeist</label>
                     <input type="radio" id="poltergeist" name="reportEvent" value="POLTERGEIST" />
+                    <label htmlFor="poltergeist">
+                        <img src={poltergeist} alt="" className="img-choice poltergeist-animation" />
+                        <span>Poltergeist</span>
+                    </label>
                 </div>
                 <div className="event-type-selection">
-                    <img src={monster} alt="" className="img-choice" />
-                    <label for="creature">Criatura</label>
-                    <input type="radio" id="creature" name="reportEvent" value="CREATURE" />
+                    <input type="radio" id="monster" name="reportEvent" value="monster" />
+                    <label for="monster">
+                        <img src={monster} alt="" className="img-choice monster-animation" />
+                        <span>Criatura</span>
+                    </label>
                 </div>
                 <div className="event-type-selection">
-                    <img src={ufo} alt="" className="img-choice" />
-                    <label for="ufo">Óvni</label>
                     <input type="radio" id="ufo" name="reportEvent" value="UFO" />
+                    <label for="ufo">
+                        <img src={ufo} alt="" className="img-choice ufo-animation" />
+                        <span>Óvni</span>
+                    </label>
                 </div>
             </form>
 
@@ -51,14 +59,13 @@ const ReportModal = ({ onClose }) => {
                     <label>Quando aconteceu?</label>
                     <input type="date" id="date" />
                 </div>
-                {/* <div className="event-info-details">
-                    <label htmlFor="">Intensidade do evento</label>
-                    <input type="range" min="1" max="5" id="range" />
-                </div> */}
-                <IntensitySlider
-                    value={intensity}
-                    onChange={setIntensity}
-                />
+                <div>
+                    <label>Intensidade do evento</label>
+                    <IntensitySlider
+                        value={intensity}
+                        onChange={setIntensity}
+                    />
+                </div>
                 <div className="event-info-details">
                     <button id="upload">Upload de mídia</button>
                 </div>

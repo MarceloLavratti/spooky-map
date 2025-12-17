@@ -4,8 +4,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #643173;
-    background-color: #86a59c;
+    color: #2e1c2b;
+    background-color: #eaeaea;
     border: solid 2px #333333;
     border-radius: 10px;
     font-size: 1em;
@@ -40,12 +40,21 @@
 .event-type-selection {
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }
 
-.img-choice {
-    max-width: 65%;
+.event-type-selection:hover {
+    cursor: pointer;
+}
+
+.event-type-selection label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-type-selection input {
+    display: none;
 }
 
 .event-info {
@@ -62,19 +71,154 @@
     align-items: center;
 }
 
+.img-choice {
+    animation: none;
+    transition: transform 0.3s ease;
+    max-width: 65%;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
 #title,
 #text {
-    border-radius: 5px;
     width: 300px;
 }
 
 #date {
-    border-radius: 5px;
     font-size: 1.5em;
     margin-right: 142px;
+}
 
+#text {
+    height: 100px;
+}
+
+#title,
+#text,
+#date {
+    border: 1px solid #ff9e00;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+#title:focus,
+#text:focus,
+#date:focus {
+    border-color: #5a189a;
 }
 
 #range {
     width: 200px;
+}
+
+/* Animações */
+.event-type-selection input:checked+label .ghost-animation {
+    animation: ghost-float 2s ease-in-out infinite;
+}
+
+@keyframes ghost-float {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(-3deg);
+        opacity: 0.5;
+    }
+}
+
+.event-type-selection input:checked+label .poltergeist-animation {
+    animation: poltergeist-chaos 0.1s infinite;
+}
+
+@keyframes poltergeist-chaos {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-2px, 1px) rotate(-1deg);
+    }
+
+    30% {
+        transform: translate(2px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, -2px) rotate(-2deg);
+    }
+
+    70% {
+        transform: translate(1px, 2px) rotate(2deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.event-type-selection input:checked+label .monster-animation {
+    animation: monster-organic 2s infinite;
+}
+
+@keyframes monster-organic {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.04);
+    }
+
+    60% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.event-type-selection input:checked+label .ufo-animation {
+    animation: ufo-sway 1s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes ufo-sway {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateX(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateX(-6px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(-2deg);
+    }
+}
+
+.event-type-selection input:checked+label .ghost-animation,
+.event-type-selection input:checked+label .poltergeist-animation,
+.event-type-selection input:checked+label .monster-animation,
+.event-type-selection input:checked+label .ufo-animation {
+    outline: 2px solid #5a189a;
+    border-radius: 10px;
 }

@@ -7,7 +7,7 @@
 }
 
 .slider-track {
-    background-color: #F6F1EE;
+    background-color: #f7b500;
     position: relative;
     flex-grow: 1;
     height: 4px;
@@ -16,21 +16,21 @@
 
 .slider-range {
     position: absolute;
-    background-color: #89ce94;
+    background-color: #ff6d00;
     height: 100%;
     border-radius: 999px;
 }
 
 .slider-thumb {
     display: block;
-    width: 14px;
-    height: 14px;
-    background-color: #7d5ba6;
+    width: 15px;
+    height: 15px;
+    background-color: #7b2cbf;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .slider-thumb:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(225, 0, 255, 0.3);
+    box-shadow: 0 0 0 4px #9d4edd59;
 }
