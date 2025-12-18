@@ -6,12 +6,13 @@
     transform: translate(-50%, -50%);
     color: #2e1c2b;
     background-color: #eaeaea;
-    border: solid 2px #333333;
+    border: solid 1px #333333;
     border-radius: 10px;
-    font-size: 1em;
+    font-size: 1.25em;
     width: 600px;
-    height: 700px;
-    font-family: "IBM Plex Sans", sans-serif;
+    height: 800px;
+    font-family: "Metal Mania", system-ui;
+    transition: opacity 0.5s ease;
 }
 
 #p-modal {
@@ -20,7 +21,9 @@
 
 #upload,
 #send:hover,
-#close:hover {
+#close:hover,
+.img-choice:hover,
+.event-type-selection span {
     cursor: pointer;
 }
 
@@ -41,10 +44,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.event-type-selection:hover {
-    cursor: pointer;
 }
 
 .event-type-selection label {
@@ -75,10 +74,6 @@
     animation: none;
     transition: transform 0.3s ease;
     max-width: 65%;
-}
-
-img:hover {
-    cursor: pointer;
 }
 
 #title,
@@ -112,6 +107,67 @@ img:hover {
 
 #range {
     width: 200px;
+}
+
+.intensity-style {
+    display: flex;
+    align-items: center;
+}
+
+.intensity-style img {
+    width: 60px;
+    transition: opacity 0.3s ease;
+    margin-left: 25px;
+}
+
+.send-style {
+    margin: 0 auto;
+}
+
+#upload {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.25em;
+}
+
+#upload span {
+    font-size: 1.25em;
+}
+
+#upload {
+    color: #2e1c2b;
+    background-color: #d15053;
+
+
+}
+
+#upload:hover {
+    background-color: #ee6c4d;
+}
+
+#upload,
+.btns-style {
+    border: none;
+    font-size: 1.25em;
+    border-radius: 10px;
+    padding: 7px 15px;
+    font-family: "Metal Mania", system-ui;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 50px;
+    margin: 20px auto 0 auto;
+}
+
+.btns-style {
+    color: #fffcf2;
+    background-color: #252422;
+}
+
+.btns-style:hover {
+    background-color: #696560;
 }
 
 /* Animações */
@@ -221,4 +277,66 @@ img:hover {
 .event-type-selection input:checked+label .ufo-animation {
     outline: 2px solid #5a189a;
     border-radius: 10px;
+}
+
+
+
+.eye-animation {
+    animation: eye-movement 2.5s ease-in-out infinite alternate;
+}
+
+.intensity-1 {
+    animation-duration: 2s;
+}
+
+.intensity-2 {
+    animation-duration: 1.2s;
+}
+
+.intensity-3 {
+    animation-duration: 0.7s;
+}
+
+.intensity-4 {
+    animation-duration: 0.35s;
+}
+
+.intensity-5 {
+    animation: eye-chaos 0.5s infinite;
+}
+
+@keyframes eye-movement {
+    0% {
+        transform: translateX(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateX(-6px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(-2deg);
+    }
+}
+
+@keyframes eye-chaos {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-4px, 2px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translate(3px, -2px) rotate(3deg);
+    }
+
+    75% {
+        transform: translate(-2px, -3px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }

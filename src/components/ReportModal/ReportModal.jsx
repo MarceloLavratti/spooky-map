@@ -1,14 +1,25 @@
 import "./ReportModal.css"
 import IntensitySlider from "../IntensitySlider/IntensitySlider"
-import ghost from "../../assets/images/ghost_m_white.svg"
-import poltergeist from "../../assets/images/poltergeist_m_white.svg"
-import monster from "../../assets/images/monster_m_white.svg"
-import ufo from "../../assets/images/ufo_m_white.svg"
+import { EVENT_ASSETS } from "../../constants/eventAssets";
 import { useState } from "react"
+
 
 const ReportModal = ({ onClose }) => {
 
-    const [intensity, setIntensity] = useState(3)
+    const [intensity, setIntensity] = useState(1)
+
+    const intensityImages = {
+        1: EVENT_ASSETS.EYE1.image,
+        2: EVENT_ASSETS.EYE2.image,
+        3: EVENT_ASSETS.EYE3.image,
+        4: EVENT_ASSETS.EYE4.image,
+        5: EVENT_ASSETS.EYE5.image,
+    };
+
+
+    const handleImageIntensity = () => {
+
+    }
 
     return (
         <div id='reportModal' className='report-modal'>
@@ -19,28 +30,28 @@ const ReportModal = ({ onClose }) => {
                 <div className="event-type-selection">
                     <input type="radio" id="ghost" name="reportEvent" />
                     <label htmlFor="ghost">
-                        <img src={ghost} className="img-choice ghost-animation" />
+                        <img src={EVENT_ASSETS.GHOST.image} className="img-choice ghost-animation" />
                         <span>Aparição</span>
                     </label>
                 </div>
                 <div className="event-type-selection">
                     <input type="radio" id="poltergeist" name="reportEvent" value="POLTERGEIST" />
                     <label htmlFor="poltergeist">
-                        <img src={poltergeist} alt="" className="img-choice poltergeist-animation" />
+                        <img src={EVENT_ASSETS.POLTERGEIST.image} alt="" className="img-choice poltergeist-animation" />
                         <span>Poltergeist</span>
                     </label>
                 </div>
                 <div className="event-type-selection">
                     <input type="radio" id="monster" name="reportEvent" value="monster" />
                     <label for="monster">
-                        <img src={monster} alt="" className="img-choice monster-animation" />
+                        <img src={EVENT_ASSETS.MONSTER.image} alt="" className="img-choice monster-animation" />
                         <span>Criatura</span>
                     </label>
                 </div>
                 <div className="event-type-selection">
                     <input type="radio" id="ufo" name="reportEvent" value="UFO" />
                     <label for="ufo">
-                        <img src={ufo} alt="" className="img-choice ufo-animation" />
+                        <img src={EVENT_ASSETS.UFO.image} alt="" className="img-choice ufo-animation" />
                         <span>Óvni</span>
                     </label>
                 </div>
@@ -61,17 +72,27 @@ const ReportModal = ({ onClose }) => {
                 </div>
                 <div>
                     <label>Intensidade do evento</label>
-                    <IntensitySlider
-                        value={intensity}
-                        onChange={setIntensity}
-                    />
+                    <div className="intensity-style">
+                        <IntensitySlider
+                            value={intensity}
+                            onChange={setIntensity}
+                        />
+                        <img src={intensityImages[intensity]} alt="" className={`eye-animation intensity-${intensity}`} />
+                    </div>
                 </div>
-                <div className="event-info-details">
-                    <button id="upload">Upload de mídia</button>
+                <div className="send-style">
+                    <button id="upload">Evidência
+                        <span class="material-symbols-outlined">
+                            upload
+                        </span>
+                    </button>
+                </div>
+                <div className="modal-btns">
+                    <button id="send" class="btns-style" onClick={onClose}>Enviar</button>
+                    <button id="close" class="btns-style" onClick={onClose}>Cancelar</button>
                 </div>
             </div>
-            <button id="send" onClick={onClose}>Enviar</button>
-            <button id="close" onClick={onClose}>Cancelar</button>
+
 
         </div >
     )
