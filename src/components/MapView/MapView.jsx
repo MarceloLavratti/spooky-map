@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, useMapEvents, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, useMapEvents, ZoomControl, Marker } from "react-leaflet";
 import CenterMarker from "../CenterMarker/CenterMarker.jsx";
 
 const MapEvents = ({ onCenterChange }) => {
@@ -23,13 +23,14 @@ const MapView = ({ onCenterChange, markedPoint }) => {
       <MapContainer
         center={[-23.55, -46.63]}
         zoom={13}
+        zoomControl={false}
         style={{ height: "100%", width: "100%" }}
       >
         {<TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; OpenStreetMap contributors"
         />}
-
+        <ZoomControl position="topright" />
         <MapEvents onCenterChange={onCenterChange} />
 
         {markedPoint && (
