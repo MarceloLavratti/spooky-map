@@ -1,5 +1,12 @@
-import { MapContainer, TileLayer, useMapEvents, ZoomControl, Marker } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  useMapEvents,
+  ZoomControl,
+  Marker,
+} from "react-leaflet";
 import CenterMarker from "../CenterMarker/CenterMarker.jsx";
+import { EVENT_ASSETS } from "../../constants/eventAssets";
 
 const MapEvents = ({ onCenterChange }) => {
   useMapEvents({
@@ -17,6 +24,10 @@ const MapEvents = ({ onCenterChange }) => {
   return null;
 };
 
+const violetIcon = new L.Icon({
+  iconUrl: EVENT_ASSETS.VIOLET_MARKER.image,
+});
+
 const MapView = ({ onCenterChange, markedPoint }) => {
   return (
     <div style={{ height: "100vh", width: "100%" }}>
@@ -26,15 +37,20 @@ const MapView = ({ onCenterChange, markedPoint }) => {
         zoomControl={false}
         style={{ height: "100%", width: "100%" }}
       >
-        {<TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />}
+        {
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; OpenStreetMap contributors"
+          />
+        }
         <ZoomControl position="topright" />
         <MapEvents onCenterChange={onCenterChange} />
 
         {markedPoint && (
-          <Marker position={[markedPoint.lat, markedPoint.lng]} />
+          <Marker
+            position={[markedPoint.lat, markedPoint.lng]}
+            icon={violetIcon}
+          />
         )}
       </MapContainer>
 

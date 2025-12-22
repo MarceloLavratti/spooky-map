@@ -1,26 +1,26 @@
 .report-modal {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
-    color: #2e1c2b;
-    background-color: #eaeaea;
-    border: solid 1px #333333;
-    border-radius: 10px;
-    font-size: 1.25em;
-    width: 600px;
-    height: 800px;
-    font-family: "Metal Mania", system-ui;
-    animation: modal-enter 0.4s ease-out forwards;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  color: #2e1c2b;
+  background-color: #eaeaea;
+  border: solid 1px #333333;
+  border-radius: 10px;
+  font-size: 1.25em;
+  width: 600px;
+  height: 800px;
+  font-family: "Metal Mania", system-ui;
+  animation: modal-enter 0.4s ease-out forwards;
 }
 
 #p-modal {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 #upload,
@@ -28,254 +28,253 @@
 #close:hover,
 .img-choice:hover,
 .event-type-selection span {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .event-selection {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .event-type-selection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .event-type-selection label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .event-type-selection input {
-    display: none;
+  display: none;
 }
 
 .event-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 90%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 100%;
 }
 
 .event-info-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .img-choice {
-    animation: none;
-    transition: transform 0.3s ease;
-    max-width: 65%;
+  animation: none;
+  transition: transform 0.3s ease;
+  max-width: 65%;
 }
 
 #title,
 #text {
-    width: 300px;
+  width: 300px;
 }
 
 #date {
-    font-size: 1.5em;
-    margin-right: 142px;
+  font-size: 1.5em;
+  margin-right: 90px;
 }
 
 #text {
-    height: 100px;
+  height: 100px;
 }
 
 #title,
 #text,
 #date {
-    border: 1px solid #ff9e00;
-    border-radius: 5px;
-    outline: none;
-    padding: 5px;
+  border: 1px solid #ff9e00;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
 }
 
 #title:focus,
 #text:focus,
 #date:focus {
-    border-color: #5a189a;
+  border-color: #5a189a;
 }
 
 #range {
-    width: 200px;
+  width: 200px;
 }
 
 .intensity-style {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .intensity-style img {
-    width: 60px;
-    transition: opacity 0.3s ease;
-    margin-left: 25px;
+  width: 60px;
+  transition: opacity 0.3s ease;
+  margin-left: 25px;
 }
 
 .send-style {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 #upload {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1.25em;
 }
 
 #upload span {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 #upload {
-    color: #2e1c2b;
-    background-color: #d15053;
-
-
+  color: #2e1c2b;
+  background-color: #d15053;
 }
 
 #upload:hover {
-    background-color: #ee6c4d;
+  background-color: #ee6c4d;
 }
 
 #upload,
 .btns-style {
-    border: none;
-    font-size: 1.25em;
-    border-radius: 10px;
-    padding: 7px 15px;
-    font-family: "Metal Mania", system-ui;
+  border: none;
+  font-size: 1.25em;
+  border-radius: 10px;
+  padding: 7px 15px;
+  font-family: "Metal Mania", system-ui;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .modal-btns {
-    display: flex;
-    gap: 50px;
-    margin: 20px auto 0 auto;
+  display: flex;
+  gap: 50px;
+  margin: 20px auto 0 auto;
 }
 
 .btns-style {
-    color: #fffcf2;
-    background-color: #252422;
+  color: #fffcf2;
+  background-color: #252422;
 }
 
 .btns-style:hover {
-    background-color: #696560;
+  background-color: #696560;
 }
 
 /* Animações */
-.event-type-selection input:checked+label .ghost-animation {
-    animation: ghost-float 2s ease-in-out infinite;
+.event-type-selection input:checked + label .ghost-animation {
+  animation: ghost-float 2s ease-in-out infinite;
 }
 
 @keyframes ghost-float {
-    0% {
-        transform: translateY(0) rotate(-3deg);
-        opacity: 0.5;
-    }
+  0% {
+    transform: translateY(0) rotate(-3deg);
+    opacity: 0.5;
+  }
 
-    50% {
-        transform: translateY(-12px) rotate(3deg);
-        opacity: 1;
-    }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+    opacity: 1;
+  }
 
-    100% {
-        transform: translateY(0) rotate(-3deg);
-        opacity: 0.5;
-    }
+  100% {
+    transform: translateY(0) rotate(-3deg);
+    opacity: 0.5;
+  }
 }
 
-.event-type-selection input:checked+label .poltergeist-animation {
-    animation: poltergeist-chaos 0.1s infinite;
+.event-type-selection input:checked + label .poltergeist-animation {
+  animation: poltergeist-chaos 0.1s infinite;
 }
 
 @keyframes poltergeist-chaos {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 
-    10% {
-        transform: translate(-2px, 1px) rotate(-1deg);
-    }
+  10% {
+    transform: translate(-2px, 1px) rotate(-1deg);
+  }
 
-    30% {
-        transform: translate(2px, -1px) rotate(1deg);
-    }
+  30% {
+    transform: translate(2px, -1px) rotate(1deg);
+  }
 
-    50% {
-        transform: translate(-1px, -2px) rotate(-2deg);
-    }
+  50% {
+    transform: translate(-1px, -2px) rotate(-2deg);
+  }
 
-    70% {
-        transform: translate(1px, 2px) rotate(2deg);
-    }
+  70% {
+    transform: translate(1px, 2px) rotate(2deg);
+  }
 
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
-.event-type-selection input:checked+label .monster-animation {
-    animation: monster-organic 2s infinite;
+.event-type-selection input:checked + label .monster-animation {
+  animation: monster-organic 2s infinite;
 }
 
 @keyframes monster-organic {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    30% {
-        transform: scale(1.04);
-    }
+  30% {
+    transform: scale(1.04);
+  }
 
-    60% {
-        transform: scale(1.08);
-    }
+  60% {
+    transform: scale(1.08);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.event-type-selection input:checked+label .ufo-animation {
-    animation: ufo-sway 1s ease-in-out infinite alternate;
-    transform-origin: center;
+.event-type-selection input:checked + label .ufo-animation {
+  animation: ufo-sway 1s ease-in-out infinite alternate;
+  transform-origin: center;
 }
 
 @keyframes ufo-sway {
-    from {
-        opacity: 0.6;
-    }
+  from {
+    opacity: 0.6;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 
-    0% {
-        transform: translateX(0) rotate(-2deg);
-    }
+  0% {
+    transform: translateX(0) rotate(-2deg);
+  }
 
-    50% {
-        transform: translateX(-6px) rotate(2deg);
-    }
+  50% {
+    transform: translateX(-6px) rotate(2deg);
+  }
 
-    100% {
-        transform: translateX(0) rotate(-2deg);
-    }
+  100% {
+    transform: translateX(0) rotate(-2deg);
+  }
 }
 
-.event-type-selection input:checked+label .ghost-animation,
-.event-type-selection input:checked+label .poltergeist-animation,
-.event-type-selection input:checked+label .monster-animation,
-.event-type-selection input:checked+label .ufo-animation {
-    outline: 2px solid #5a189a;
-    border-radius: 10px;
+.event-type-selection input:checked + label .ghost-animation,
+.event-type-selection input:checked + label .poltergeist-animation,
+.event-type-selection input:checked + label .monster-animation,
+.event-type-selection input:checked + label .ufo-animation {
+  outline: 2px solid #5a189a;
+  border-radius: 10px;
 }
-
 
 /*
 .eye-animation {
@@ -317,107 +316,105 @@
 } */
 
 .eye-animation {
-    animation: shake 0.25s infinite;
+  animation: shake 0.25s infinite;
 }
 
 .intensity-1 {
-    animation-duration: 3s;
+  animation-duration: 3s;
 }
 
 .intensity-2 {
-    animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 .intensity-3 {
-    animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .intensity-4 {
-    animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
 
 .intensity-5 {
-    animation: eye-chaos 0.5s infinite;
+  animation: eye-chaos 0.5s infinite;
 }
-
 
 @keyframes shake {
-    0% {
-        transform: translate(0, 0) rotate(0);
-    }
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
 
-    10% {
-        transform: translate(-1px, -1px) rotate(-1deg);
-    }
+  10% {
+    transform: translate(-1px, -1px) rotate(-1deg);
+  }
 
-    20% {
-        transform: translate(1px, 1px) rotate(1deg);
-    }
+  20% {
+    transform: translate(1px, 1px) rotate(1deg);
+  }
 
-    30% {
-        transform: translate(-2px, 1px) rotate(0deg);
-    }
+  30% {
+    transform: translate(-2px, 1px) rotate(0deg);
+  }
 
-    40% {
-        transform: translate(2px, -1px) rotate(1deg);
-    }
+  40% {
+    transform: translate(2px, -1px) rotate(1deg);
+  }
 
-    50% {
-        transform: translate(-1px, 2px) rotate(-1deg);
-    }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
 
-    60% {
-        transform: translate(1px, -2px) rotate(0deg);
-    }
+  60% {
+    transform: translate(1px, -2px) rotate(0deg);
+  }
 
-    70% {
-        transform: translate(-2px, 0) rotate(-1deg);
-    }
+  70% {
+    transform: translate(-2px, 0) rotate(-1deg);
+  }
 
-    80% {
-        transform: translate(2px, 0) rotate(1deg);
-    }
+  80% {
+    transform: translate(2px, 0) rotate(1deg);
+  }
 
-    90% {
-        transform: translate(-1px, -1px) rotate(0);
-    }
+  90% {
+    transform: translate(-1px, -1px) rotate(0);
+  }
 
-    100% {
-        transform: translate(0, 0) rotate(0);
-    }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
 }
 
-
 @keyframes eye-chaos {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 
-    25% {
-        transform: translate(-4px, 2px) rotate(-3deg);
-    }
+  25% {
+    transform: translate(-4px, 2px) rotate(-3deg);
+  }
 
-    50% {
-        transform: translate(3px, -2px) rotate(3deg);
-    }
+  50% {
+    transform: translate(3px, -2px) rotate(3deg);
+  }
 
-    75% {
-        transform: translate(-2px, -3px) rotate(-2deg);
-    }
+  75% {
+    transform: translate(-2px, -3px) rotate(-2deg);
+  }
 
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 @keyframes modal-enter {
-    from {
-        transform: scale(0.5) translate(-50%, -50%);
-        opacity: 0;
-    }
+  from {
+    transform: scale(0.5) translate(-50%, -50%);
+    opacity: 0;
+  }
 
-    to {
-        transform: scale(1) translate(-50%, -50%);
-        opacity: 1;
-    }
+  to {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
 }

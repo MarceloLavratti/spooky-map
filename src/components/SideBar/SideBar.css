@@ -1,0 +1,38 @@
+#sideBar {
+  position: fixed;
+  z-index: 999;
+  width: 80px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #110015, #4a314d);
+  font-family: Metal Mania;
+}
+
+.logo-img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.side-bar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.side-bar-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ff8427;
+  transition: color 0.2s ease-in-out;
+  font-size: 1em;
+}
+
+.side-bar-option:hover {
+  cursor: pointer;
+  color: #eaeaea;
+}
+
+.side-bar-icon {
+  font-size: 30px;
+}

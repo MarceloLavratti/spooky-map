@@ -2,7 +2,9 @@ import { useState } from "react";
 import MapView from "../../components/MapView/MapView";
 import MarkerButton from "../../components/MarkerButton/MarkerButton";
 import ReportModal from "../../components/ReportModal/ReportModal";
-import NavBar from "../../components/NavBar/NavBar";
+import SideBar from "../../components/SideBar/SideBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import { searchAddress } from "../../services/geocodingService.js";
 
 const MapPage = () => {
   const [mapCenter, setMapCenter] = useState(null);
@@ -19,15 +21,26 @@ const MapPage = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-  }
+  };
+
+  const handleSearch = async (query) => {
+    const coords = await searchAddress(query);
+
+    if (!coords) {
+      alert("Endereço não encontrado");
+      return;
+    }
+
+    setMapCenter(coords);
+  };
 
   return (
     <>
-      <NavBar />
+      <SideBar />
+      <SearchBar onSearch={handleSearch} />
       <MapView onCenterChange={setMapCenter} markedPoint={markedPoint} />
       <MarkerButton onMark={handleMark} />
       {isModalOpen && <ReportModal onClose={handleCloseModal} />}
-
     </>
   );
 };
