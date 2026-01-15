@@ -13,7 +13,7 @@ const MapPage = () => {
 
   const handleMark = () => {
     if (!mapCenter) return;
-
+    console.log(mapCenter)
     setMarkedPoint(mapCenter);
     setIsModalOpen(true);
     console.log("Ponto marcado:", mapCenter);
@@ -40,7 +40,8 @@ const MapPage = () => {
       <SearchBar onSearch={handleSearch} />
       <MapView onCenterChange={setMapCenter} markedPoint={markedPoint} />
       <MarkerButton onMark={handleMark} />
-      {isModalOpen && <ReportModal onClose={handleCloseModal} />}
+      <ReportModal isModalOpen={isModalOpen} onClose={handleCloseModal} />
+
     </>
   );
 };

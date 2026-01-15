@@ -7,7 +7,6 @@
   z-index: 999;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
   color: #2e1c2b;
   background-color: #eaeaea;
   border: solid 1px #333333;
@@ -16,7 +15,18 @@
   width: 600px;
   height: 800px;
   font-family: "Metal Mania", system-ui;
-  animation: modal-enter 0.4s ease-out forwards;
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.report-modal.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #p-modal {
@@ -168,7 +178,7 @@
 }
 
 /* Animações */
-.event-type-selection input:checked + label .ghost-animation {
+.event-type-selection input:checked+label .ghost-animation {
   animation: ghost-float 2s ease-in-out infinite;
 }
 
@@ -189,7 +199,7 @@
   }
 }
 
-.event-type-selection input:checked + label .poltergeist-animation {
+.event-type-selection input:checked+label .poltergeist-animation {
   animation: poltergeist-chaos 0.1s infinite;
 }
 
@@ -219,7 +229,7 @@
   }
 }
 
-.event-type-selection input:checked + label .monster-animation {
+.event-type-selection input:checked+label .monster-animation {
   animation: monster-organic 2s infinite;
 }
 
@@ -241,7 +251,7 @@
   }
 }
 
-.event-type-selection input:checked + label .ufo-animation {
+.event-type-selection input:checked+label .ufo-animation {
   animation: ufo-sway 1s ease-in-out infinite alternate;
   transform-origin: center;
 }
@@ -268,52 +278,13 @@
   }
 }
 
-.event-type-selection input:checked + label .ghost-animation,
-.event-type-selection input:checked + label .poltergeist-animation,
-.event-type-selection input:checked + label .monster-animation,
-.event-type-selection input:checked + label .ufo-animation {
+.event-type-selection input:checked+label .ghost-animation,
+.event-type-selection input:checked+label .poltergeist-animation,
+.event-type-selection input:checked+label .monster-animation,
+.event-type-selection input:checked+label .ufo-animation {
   outline: 2px solid #5a189a;
   border-radius: 10px;
 }
-
-/*
-.eye-animation {
-    animation: eye-movement 2.5s ease-in-out infinite alternate;
-}
-
-.intensity-1 {
-    animation-duration: 2s;
-}
-
-.intensity-2 {
-    animation-duration: 1.2s;
-}
-
-.intensity-3 {
-    animation-duration: 0.7s;
-}
-
-.intensity-4 {
-    animation-duration: 0.35s;
-}
-
-.intensity-5 {
-    animation: eye-chaos 0.5s infinite;
-}
-
- @keyframes eye-movement {
-    0% {
-        transform: translateX(0) rotate(-2deg);
-    }
-
-    50% {
-        transform: translateX(-6px) rotate(2deg);
-    }
-
-    100% {
-        transform: translateX(0) rotate(-2deg);
-    }
-} */
 
 .eye-animation {
   animation: shake 0.25s infinite;

@@ -20,7 +20,6 @@ const MapEvents = ({ onCenterChange }) => {
       });
     },
   });
-
   return null;
 };
 
@@ -29,6 +28,7 @@ const violetIcon = new L.Icon({
 });
 
 const MapView = ({ onCenterChange, markedPoint }) => {
+
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <MapContainer
@@ -45,7 +45,6 @@ const MapView = ({ onCenterChange, markedPoint }) => {
         }
         <ZoomControl position="topright" />
         <MapEvents onCenterChange={onCenterChange} />
-
         {markedPoint && (
           <Marker
             position={[markedPoint.lat, markedPoint.lng]}

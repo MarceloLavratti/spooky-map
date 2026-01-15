@@ -3,8 +3,10 @@ import IntensitySlider from "../IntensitySlider/IntensitySlider";
 import { EVENT_ASSETS } from "../../constants/eventAssets";
 import { useState } from "react";
 
-const ReportModal = ({ isOpen, onClose }) => {
+const ReportModal = ({ isModalOpen, onClose }) => {
+
   const [intensity, setIntensity] = useState(1);
+  const modal = document.querySelector(".report-modal");
 
   const intensityImages = {
     1: EVENT_ASSETS.EYE1.image,
@@ -16,7 +18,7 @@ const ReportModal = ({ isOpen, onClose }) => {
 
   return (
     <div>
-      <div id="reportModal" className="report-modal">
+      <div id="reportModal" className={`report-modal ${isModalOpen ? "open" : ""}`}>
         <p id="p-modal">O que aconteceu aqui?</p>
 
         <form action="" className="event-selection">
