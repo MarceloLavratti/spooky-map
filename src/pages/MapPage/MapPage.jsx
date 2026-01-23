@@ -38,10 +38,9 @@ const MapPage = () => {
     <>
       <SideBar />
       <SearchBar onSearch={handleSearch} />
-      <MapView onCenterChange={setMapCenter} markedPoint={markedPoint} />
+      <MapView mapCenter={mapCenter} />
       <MarkerButton onMark={handleMark} />
       <ReportModal isModalOpen={isModalOpen} onClose={handleCloseModal} />
-
     </>
   );
 };
