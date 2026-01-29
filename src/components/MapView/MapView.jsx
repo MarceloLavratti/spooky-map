@@ -18,8 +18,19 @@ import { EVENT_ASSETS } from "../../constants/eventAssets";
 const MapEvents = ({ onCenterChange }) => {
   useMapEvents({
     moveend: (event) => {
+      if (typeof onCenterChange !== "function") return;
+
       const map = event.target;
       const center = map.getCenter();
+
+      // 🔒 evita loop
+      if (
+        mapCenter &&
+        Math.abs(center.lat - mapCenter.lat) < 0.00001 &&
+        Math.abs(center.lng - mapCenter.lng) < 0.00001
+      ) {
+        return;
+      }
 
       onCenterChange({
         lat: center.lat,
@@ -27,7 +38,6 @@ const MapEvents = ({ onCenterChange }) => {
       });
     },
   });
-
   return null;
 };
 
