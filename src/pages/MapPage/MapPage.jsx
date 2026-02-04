@@ -12,11 +12,11 @@ const MapPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleMark = () => {
+    if (!mapCenter) return;
     console.log(mapCenter)
     setMarkedPoint(mapCenter);
     setIsModalOpen(true);
     console.log("Ponto marcado:", mapCenter);
-    console.log("MarkedPoint:", markedPoint.lat);
   };
 
   const handleCloseModal = () => {

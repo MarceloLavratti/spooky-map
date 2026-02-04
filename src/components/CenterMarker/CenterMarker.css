@@ -1,8 +1,8 @@
 .marker {
   position: fixed;
   z-index: 999;
-  top: 52.4%;
-  left: 49.7%;
+  top: 48%;
+  left: 49.09%;
   color: #5a189a;
   pointer-events: none;
 }

@@ -15,15 +15,14 @@ import { EVENT_ASSETS } from "../../constants/eventAssets";
 // ===============================
 // Escuta movimentos do mapa
 // ===============================
-const MapEvents = ({ onCenterChange }) => {
+const MapEvents = ({ onCenterChange, mapCenter }) => {
   useMapEvents({
     moveend: (event) => {
-      if (typeof onCenterChange !== "function") return;
+      if (!onCenterChange) return;
 
-      const map = event.target;
-      const center = map.getCenter();
+      const center = event.target.getCenter();
 
-      // 🔒 evita loop
+      // evita loop desnecessário
       if (
         mapCenter &&
         Math.abs(center.lat - mapCenter.lat) < 0.00001 &&
@@ -38,6 +37,7 @@ const MapEvents = ({ onCenterChange }) => {
       });
     },
   });
+
   return null;
 };
 
@@ -77,6 +77,13 @@ const MapView = ({ onCenterChange, markedPoint, mapCenter }) => {
         center={[-23.55, -46.63]} // centro inicial
         zoom={13}
         zoomControl={false}
+        whenCreated={(map) => {
+          const center = map.getCenter();
+          onCenterChange({
+            lat: center.lat,
+            lng: center.lng,
+          });
+        }}
         style={{ height: "100%", width: "100%" }}
       >
         <TileLayer
@@ -87,7 +94,7 @@ const MapView = ({ onCenterChange, markedPoint, mapCenter }) => {
         <ZoomControl position="topright" />
 
         {/* Escuta movimento manual */}
-        <MapEvents onCenterChange={onCenterChange} />
+        <MapEvents onCenterChange={onCenterChange} mapCenter={mapCenter} />
 
         {/* Move mapa quando o estado muda (busca) */}
         <MapController center={mapCenter} />

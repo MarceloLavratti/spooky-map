@@ -19,7 +19,8 @@ const ReportModal = ({ isModalOpen, onClose }) => {
   return (
     <div>
       <div id="reportModal" className={`report-modal ${isModalOpen ? "open" : ""}`}>
-        <p id="p-modal">O que aconteceu aqui?</p>
+        <p id="modal-adress">Rua Chuá nº 13</p>
+        <p className="p-modal">O que aconteceu aqui?</p>
 
         <form action="" className="event-selection">
           <div className="event-type-selection">
