@@ -3,10 +3,10 @@ import IntensitySlider from "../IntensitySlider/IntensitySlider";
 import { EVENT_ASSETS } from "../../constants/eventAssets";
 import { useState } from "react";
 
-const ReportModal = ({ isModalOpen, onClose }) => {
+const ReportModal = ({ isModalOpen, onClose, address }) => {
 
   const [intensity, setIntensity] = useState(1);
-  const modal = document.querySelector(".report-modal");
+  // const modal = document.querySelector(".report-modal");
 
   const intensityImages = {
     1: EVENT_ASSETS.EYE1.image,
@@ -16,12 +16,16 @@ const ReportModal = ({ isModalOpen, onClose }) => {
     5: EVENT_ASSETS.EYE5.image,
   };
 
+  if (!address) return null;
+
   return (
     <div>
       <div id="reportModal" className={`report-modal ${isModalOpen ? "open" : ""}`}>
-        <p id="modal-adress">Rua Chuá nº 13</p>
+        <div id="location">
+          <span className="material-symbols-outlined location-symbol">location_on</span>
+          <p id="modal-address">{address.street}, {address.number}, {address.city}, {address.state}</p>
+        </div>
         <p className="p-modal">O que aconteceu aqui?</p>
-
         <form action="" className="event-selection">
           <div className="event-type-selection">
             <input type="radio" id="ghost" name="reportEvent" />

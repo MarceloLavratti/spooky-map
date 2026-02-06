@@ -5,18 +5,34 @@ import ReportModal from "../../components/ReportModal/ReportModal";
 import SideBar from "../../components/SideBar/SideBar";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { searchAddress } from "../../services/geocodingService.js";
+import { reverseGeocode } from "../../services/geocodingService.js"
 
 const MapPage = () => {
   const [mapCenter, setMapCenter] = useState(null);
   const [markedPoint, setMarkedPoint] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [address, setAddress] = useState(null)
 
-  const handleMark = () => {
+
+  const handleMark = async () => {
     if (!mapCenter) return;
-    console.log(mapCenter)
+
     setMarkedPoint(mapCenter);
     setIsModalOpen(true);
+
+    const fetchedAddress = await reverseGeocode(
+      mapCenter.lat,
+      mapCenter.lng
+    )
+
+    setAddress(fetchedAddress)
+
     console.log("Ponto marcado:", mapCenter);
+    console.log("Rua:", address.street, address.number);
+    console.log("Bairro:", address.neighborhood);
+    console.log("Cidade:", address.city);
+    console.log("Estado:", address.state);
+    console.log("CEP:", address.postalCode);
   };
 
   const handleCloseModal = () => {
@@ -44,7 +60,7 @@ const MapPage = () => {
         markedPoint={markedPoint}
       />
       <MarkerButton onMark={handleMark} />
-      <ReportModal isModalOpen={isModalOpen} onClose={handleCloseModal} />
+      <ReportModal isModalOpen={isModalOpen} onClose={handleCloseModal} address={address} />
     </>
   );
 };

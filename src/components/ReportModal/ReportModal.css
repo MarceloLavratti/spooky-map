@@ -29,12 +29,35 @@
   pointer-events: auto;
 }
 
-#modal-adress {
-  margin: 20px 0 0 0;
+#location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.location-symbol {
+  color: #7b2cbf;
+  font-variation-settings:
+    'FILL' 0,
+    /* 0 = contorno, 1 = preenchido */
+    'wght' 500,
+    /* 100..700 (mais alto = mais grosso) */
+    'GRAD' 100,
+    /* -50..200 (pode dar uma “engrossada fina”) */
+    'opsz' 24;
+}
+
+#modal-address {
+  border-radius: 5px;
+  background-color: #c8c8c8;
+  padding: 2px 7px;
+  margin-left: 5px;
 }
 
 .p-modal {
   font-size: 1.5em;
+  margin: 25px 0;
 }
 
 #upload,
